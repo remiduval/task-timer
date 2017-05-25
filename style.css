@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+body .day {
+  width: 95%;
+  max-width: 500px;
+  padding: 1rem;
+  background: #eee;
+  margin: 1rem auto;
+  box-shadow: 0 0 2px #aaa;
+}
+body .day h2 {
+  font-weight: 100;
+  margin: 0;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #666;
+  padding: 0.5rem;
+}
+body .day .total {
+  float: right;
+  padding: 0.5rem;
+  font-weight: 800;
+  margin-right: 32px;
+}
+body .day .task {
+  background: #fff;
+  border: solid 1px #ddd;
+  margin-bottom: 0.2rem;
+  display: table;
+  width: 100%;
+}
+body .day .task > * {
+  display: table-cell;
+  padding: 0.5rem;
+}
+body .day .task .action {
+  width: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  border-right: solid 1px #ddd;
+}
+body .day .task .name {
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+body .day .task .timer {
+  width: 80px;
+  text-align: right;
+}
+body .day .task .delete {
+  width: 32px;
+  padding: 0.5rem;
+  border-left: solid 1px #ddd;
+  cursor: pointer;
+  text-align: center;
+}
+body .day .task.active {
+  background: #e1ffdc;
+}
+body .day .task.active .action::before {
+  content: "Stop";
+}
+body .day .task:not(.active):not(.new) .action::before {
+  content: "Start";
+}
+body .day .task.new {
+  background: #e4efff;
+}
+body .day .task.new .action::before {
+  content: "Add";
+}
+body .day .task.new .timer, body .day .task.new .delete {
+  display: none;
+}
